@@ -57,6 +57,7 @@ jobs:
         run: |
           npx @cloudflare/next-on-pages
 
+
       # エラーの原因だったスクリプトをスルーし、手動のD1_IDを環境変数にセットします
       - name: Create D1 database and tables
         run: |
