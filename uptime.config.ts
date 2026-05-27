@@ -92,7 +92,7 @@ const workerConfig: WorkerConfig = {
 
 
       ],
-}
+
 
 // You can define multiple maintenances here
 // During maintenance, an alert will be shown at status page
