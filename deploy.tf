@@ -52,7 +52,6 @@ resource "cloudflare_workers_script" "uptimeflare_worker" {
       invocation_logs = true
     }
   }
-
   migrations = var.enable_do_migration ? {
     new_tag            = "v1"
     new_sqlite_classes = ["RemoteChecker"]
@@ -66,17 +65,16 @@ resource "cloudflare_workers_script" "uptimeflare_worker" {
     name = "UPTIMEFLARE_D1"
     type = "d1"
     id   = cloudflare_d1_database.uptimeflare_d1.id
+    }, {
+    name = "GH_NOTIFY_TOKEN"
+    type = "secret_text"
+    text = var.GH_NOTIFY_TOKEN
   }]
-
-  # ★Workersの内部（env.GH_NOTIFY_TOKEN）に暗号化してキーを埋め込む設定を追加
-  secret_text_bindings = [{
-    name        = "GH_NOTIFY_TOKEN"
-    secret_text = var.GH_NOTIFY_TOKEN
-  }]
-}
+} # ← ここで cloudflare_workers_script のブロックが正しく閉じます
 
 resource "cloudflare_workers_cron_trigger" "uptimeflare_worker_cron" {
   account_id  = var.CLOUDFLARE_ACCOUNT_ID
+
   script_name = cloudflare_workers_script.uptimeflare_worker.script_name
   schedules = [{
     cron = "* * * * *" # every 1 minute, you can reduce the write counts by increase the worker settings of `kvWriteCooldownMinutes`
