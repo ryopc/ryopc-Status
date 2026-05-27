@@ -18,32 +18,33 @@ const pageConfig: PageConfig = {
 
 const workerConfig: WorkerConfig = {
   // Define all your monitors here
-    monitors: [
+   monitors: [
     {
       id: 'ryopc_main',
       name: 'ryopc.f5.si',
       method: 'GET',
-      target: 'https://ryopc.f5.si', // HTTPS環境でない場合は http:// にしてください
+      target: 'https://f5.si',
     },
     {
       id: 'ryopc_auth',
       name: 'auth.ryopc.f5.si',
       method: 'GET',
-      target: 'https://auth.ryopc.f5.si',
+      target: 'https://f5.si',
     },
     {
       id: 'ryopc_admin',
       name: 'admin.ryopc.f5.si',
       method: 'GET',
-      target: 'https://admin.ryopc.f5.si',
+      target: 'https://f5.si',
     },
     {
       id: 'ryopc_dsns',
       name: 'd-sns.ryopc.f5.si',
       method: 'GET',
-      target: 'https://d-sns.ryopc.f5.si',
+      target: 'https://f5.si',
     },
   ],
+
 
       // [OPTIONAL] body to be sent (require POST/PUT/PATCH method)
       // body: 'Hello, world!',
@@ -57,7 +58,7 @@ const workerConfig: WorkerConfig = {
       // checkProxy: 'worker://weur',
       // [OPTIONAL] if true, the check will fallback to local if the specified proxy is down
       // checkProxyFallback: true,
-    },
+    
 
   // [Optional] Notification settings
   notification: {
