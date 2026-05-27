@@ -85,7 +85,14 @@ const workerConfig: WorkerConfig = {
     gracePeriod: 0, // 落ちたらすぐにIssueを作りたいので0にします
   },
 }
+  maintenances: [
 
+
+
+
+
+      ],
+}
 
 // You can define multiple maintenances here
 // During maintenance, an alert will be shown at status page
