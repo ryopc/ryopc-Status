@@ -68,7 +68,7 @@ const workerConfig: WorkerConfig = {
       method: 'POST',
       headers: {
         // ステップ1で取得したトークンを、ghp_...のままここに貼り付けます
-        Authorization: `token ${env.GH_NOTIFY_TOKEN}`,
+Authorization: `token ${typeof process !== 'undefined' ? process.env.GH_NOTIFY_TOKEN : ''}`,
         Accept: 'application/vnd.github.v3+json',
         'User-Agent': 'UptimeFlare-Monitor',
       },
