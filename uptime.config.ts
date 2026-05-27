@@ -18,30 +18,33 @@ const pageConfig: PageConfig = {
 
 const workerConfig: WorkerConfig = {
   // Define all your monitors here
-  monitors: [
-    // Example HTTP Monitor
+    monitors: [
     {
-      // `id` should be unique, history will be kept if the `id` remains constant
-      id: 'foo_monitor',
-      // `name` is used at status page and callback message
-      name: 'My API Monitor',
-      // `method` should be a valid HTTP Method
+      id: 'ryopc_main',
+      name: 'ryopc.f5.si',
       method: 'GET',
-      // `target` is a valid URL
-      target: 'https://example.com',
-      // [OPTIONAL] `tooltip` is ONLY used at status page to show a tooltip
-      tooltip: 'This is a tooltip for this monitor',
-      // [OPTIONAL] `statusPageLink` is ONLY used for clickable link at status page
-      statusPageLink: 'https://example.com',
-      // [OPTIONAL] `expectedCodes` is an array of acceptable HTTP response codes, if not specified, default to 2xx
-      expectedCodes: [200],
-      // [OPTIONAL] `timeout` in millisecond, if not specified, default to 10000
-      timeout: 10000,
-      // [OPTIONAL] headers to be sent
-      headers: {
-        'User-Agent': 'Uptimeflare',
-        Authorization: 'Bearer YOUR_TOKEN_HERE',
-      },
+      target: 'https://ryopc.f5.si', // HTTPS環境でない場合は http:// にしてください
+    },
+    {
+      id: 'ryopc_auth',
+      name: 'auth.ryopc.f5.si',
+      method: 'GET',
+      target: 'https://auth.ryopc.f5.si',
+    },
+    {
+      id: 'ryopc_admin',
+      name: 'admin.ryopc.f5.si',
+      method: 'GET',
+      target: 'https://admin.ryopc.f5.si',
+    },
+    {
+      id: 'ryopc_dsns',
+      name: 'd-sns.ryopc.f5.si',
+      method: 'GET',
+      target: 'https://d-sns.ryopc.f5.si',
+    },
+  ],
+
       // [OPTIONAL] body to be sent (require POST/PUT/PATCH method)
       // body: 'Hello, world!',
       // [OPTIONAL] if specified, the response must contains the keyword to be considered as operational.
@@ -55,19 +58,7 @@ const workerConfig: WorkerConfig = {
       // [OPTIONAL] if true, the check will fallback to local if the specified proxy is down
       // checkProxyFallback: true,
     },
-    // Example TCP Monitor
-    {
-      id: 'test_tcp_monitor',
-      name: 'Example TCP Monitor',
-      // `method` should be `TCP_PING` for tcp monitors
-      method: 'TCP_PING',
-      // `target` should be `host:port` for tcp monitors
-      target: '1.2.3.4:22',
-      tooltip: 'My production server SSH',
-      statusPageLink: 'https://example.com',
-      timeout: 5000,
-    },
-  ],
+
   // [Optional] Notification settings
   notification: {
     // [Optional] Notification webhook settings, if not specified, no notification will be sent
