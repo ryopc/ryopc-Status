@@ -21,6 +21,13 @@ variable "enable_do_migration" {
   default = false
 }
 
+# ★GitHub Actionsの環境変数から安全にキーを受け取るための設定を追加
+variable "GH_NOTIFY_TOKEN" {
+  type      = string
+  default   = ""
+  sensitive = true
+}
+
 resource "cloudflare_d1_database" "uptimeflare_d1" {
   account_id            = var.CLOUDFLARE_ACCOUNT_ID
   name                  = "uptimeflare_d1"
@@ -59,6 +66,12 @@ resource "cloudflare_workers_script" "uptimeflare_worker" {
     name = "UPTIMEFLARE_D1"
     type = "d1"
     id   = cloudflare_d1_database.uptimeflare_d1.id
+  }]
+
+  # ★Workersの内部（env.GH_NOTIFY_TOKEN）に暗号化してキーを埋め込む設定を追加
+  secret_text_bindings = [{
+    name        = "GH_NOTIFY_TOKEN"
+    secret_text = var.GH_NOTIFY_TOKEN
   }]
 }
 
