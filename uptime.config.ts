@@ -86,8 +86,15 @@ const workerConfig: WorkerConfig = {
   },
 }
 const maintenances = [
-  // メンテナンスの予定がなければ空のままで大丈夫です
+  {
+    id: 'dummy-maintenance',
+    title: 'Scheduled Maintenance',
+    start: 0,
+    end: 0,
+    description: 'This is a placeholder'
+  }
 ]
+
 
 // You can define multiple maintenances here
 // During maintenance, an alert will be shown at status page
