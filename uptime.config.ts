@@ -7,12 +7,12 @@ import { MaintenanceConfig, PageConfig, WorkerConfig } from './types/config'
 
 const pageConfig: PageConfig = {
   // Title for your status page
-  title: "lyc8503's Status Page",
+  title: "ryopc's Status Page",
   // Links shown at the header of your status page, could set `highlight` to `true`
   links: [
-    { link: 'https://github.com/lyc8503', label: 'GitHub' },
-    { link: 'https://blog.lyc8503.net/', label: 'Blog' },
-    { link: 'mailto:me@lyc8503.net', label: 'Email Me', highlight: true },
+    { link: 'https://github.com/ryopc', label: 'GitHub' },
+    { link: 'https://ryopc.f5.si/', label: 'site' },
+    { link: 'mailto:ceo@ryopc.f5.si', label: 'Email Me', highlight: true },
   ],
 }
 
@@ -91,9 +91,11 @@ const maintenances = [
     title: 'Scheduled Maintenance',
     start: 0,
     end: 0,
-    description: 'This is a placeholder'
+    description: 'This is a placeholder',
+    monitors: [] as string[]
   }
 ]
+
 
 
 // You can define multiple maintenances here
