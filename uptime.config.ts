@@ -91,10 +91,11 @@ const maintenances = [
     title: 'Scheduled Maintenance',
     start: 0,
     end: 0,
-    description: 'This is a placeholder',
+    body: 'This is a placeholder',
     monitors: [] as string[]
   }
 ]
+
 
 
 
