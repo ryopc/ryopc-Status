@@ -8,6 +8,12 @@ import { MaintenanceConfig, PageConfig, WorkerConfig } from './types/config'
 const pageConfig: PageConfig = {
   // Title for your status page
   title: "ryopc's Status Page",
+    // 🔗 1. ファビコン（タブのアイコン）のURL
+  favicon: 'https://cdn.jsdelivr.net/gh/ryopc/ryopc-Home@main/favicon.png', 
+
+  // 🔗 2. ロゴ（ページ上部の画像）のURL 💡ここを追加・修正
+  logo: 'https://cdn.jsdelivr.net/gh/ryopc/ryopc-Home@main/favicon.png', 
+
   // Links shown at the header of your status page, could set `highlight` to `true`
   links: [
     { link: 'https://github.com/ryopc', label: 'GitHub' },
