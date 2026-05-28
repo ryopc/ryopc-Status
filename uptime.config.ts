@@ -30,7 +30,7 @@ const workerConfig: WorkerConfig = {
       name: 'auth.ryopc.f5.si',
       method: 'GET',
       target: 'https://auth.ryopc.f5.si',
-      expectedStatusCodes: [404],
+      expectedCodes: [404], 
     },
     {
       id: 'ryopc_dsns',
