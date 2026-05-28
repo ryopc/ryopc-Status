@@ -23,19 +23,19 @@ const workerConfig: WorkerConfig = {
       id: 'ryopc_main',
       name: 'ryopc.f5.si',
       method: 'GET',
-      target: 'https://f5.si',
+      target: 'https://ryopc.f5.si',
     },
     {
       id: 'ryopc_auth',
       name: 'auth.ryopc.f5.si',
       method: 'GET',
-      target: 'https://f5.si',
+      target: 'https://auth.ryopc.f5.si',
     },
     {
       id: 'ryopc_dsns',
       name: 'd-sns.ryopc.f5.si',
       method: 'GET',
-      target: 'https://f5.si',
+      target: 'https://d-sns.ryopc.f5.si',
     },
   ],
 
