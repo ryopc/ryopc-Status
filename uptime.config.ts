@@ -32,12 +32,6 @@ const workerConfig: WorkerConfig = {
       target: 'https://f5.si',
     },
     {
-      id: 'ryopc_admin',
-      name: 'admin.ryopc.f5.si',
-      method: 'GET',
-      target: 'https://f5.si',
-    },
-    {
       id: 'ryopc_dsns',
       name: 'd-sns.ryopc.f5.si',
       method: 'GET',
