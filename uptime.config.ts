@@ -87,14 +87,15 @@ Authorization: `token ${typeof process !== 'undefined' ? process.env.GH_NOTIFY_T
   },
 }
 const maintenances = [
-  {
-    id: 'dummy-maintenance',
-    title: 'Scheduled Maintenance',
-    start: 0,
-    end: 0,
-    body: 'This is a placeholder',
-    monitors: [] as string[]
-  }
+{
+  id: 'dummy-maintenance',
+  title: 'Routine Maintenance',
+  start: 1777928400000, // 2026-06-05T06:00:00+09:00
+  end: 1777957200000,   // 2026-06-05T14:00:00+09:00
+  body: 'Regular checks and maintenance of the backend server',
+  monitors: [] as string[]
+}
+
 ]
 
 
