@@ -49,7 +49,6 @@ const workerConfig: WorkerConfig = {
       name: 'quiz.ryopc.f5.si',
       method: 'GET',
       target: 'https://quiz.ryopc.f5.si/',
-      expectedCodes: [404], 
     },
         {
       id: 'form-api',
