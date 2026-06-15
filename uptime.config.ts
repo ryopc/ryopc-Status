@@ -51,6 +51,13 @@ const workerConfig: WorkerConfig = {
       target: 'https://quiz.ryopc.f5.si/',
       expectedCodes: [200], 
        },
+         {
+      id: 'game-ryo',
+      name: 'ryopc.is-a.dev',
+      method: 'GET',
+      target: 'https://ryopc.is-a.dev/',
+      expectedCodes: [200], 
+       },
         {
       id: 'form-api',
       name: 'form-api',
