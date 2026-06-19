@@ -45,17 +45,17 @@ const workerConfig: WorkerConfig = {
       target: 'https://d-sns.ryopc.f5.si',
     },
     {
-      id: 'quiz',
-      name: 'quiz.ryopc.f5.si',
+      id: 'jr-it',
+      name: 'Kids IT Certification',
       method: 'GET',
-      target: 'https://quiz.ryopc.f5.si/',
+      target: 'https://jr-it.rweb.site/',
       expectedCodes: [200], 
        },
          {
       id: 'game-ryo',
-      name: 'ryopc.is-a.dev',
+      name: 'game-ryo.is-a.dev',
       method: 'GET',
-      target: 'https://ryopc.is-a.dev/',
+      target: 'https://game-ryo.is-a.dev/',
       expectedCodes: [200], 
        },
         {
