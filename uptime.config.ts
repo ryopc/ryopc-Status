@@ -30,6 +30,11 @@ const workerConfig: WorkerConfig = {
       name: 'ryopc.f5.si',
       method: 'GET',
       target: 'https://ryopc.f5.si',
+headers: {
+  // 👇 グローバル環境変数から値を直接読み込ませます（クォーテーションを外す）
+  'X-Uptimeflare-Auth': typeof MY_SECRET_HEADER !== 'undefined' ? MY_SECRET_HEADER : '',
+},
+
     },
     {
       id: 'ryopc_auth',
@@ -37,12 +42,22 @@ const workerConfig: WorkerConfig = {
       method: 'GET',
       target: 'https://auth.ryopc.f5.si',
       expectedCodes: [404], 
+headers: {
+  // 👇 グローバル環境変数から値を直接読み込ませます（クォーテーションを外す）
+  'X-Uptimeflare-Auth': typeof MY_SECRET_HEADER !== 'undefined' ? MY_SECRET_HEADER : '',
+},
+
     },
     {
       id: 'ryopc_dsns',
       name: 'd-sns.ryopc.f5.si',
       method: 'GET',
       target: 'https://d-sns.ryopc.f5.si',
+headers: {
+  // 👇 グローバル環境変数から値を直接読み込ませます（クォーテーションを外す）
+  'X-Uptimeflare-Auth': typeof MY_SECRET_HEADER !== 'undefined' ? MY_SECRET_HEADER : '',
+},
+
     },
     {
       id: 'jr-it',
@@ -50,6 +65,11 @@ const workerConfig: WorkerConfig = {
       method: 'GET',
       target: 'https://jr-it.rweb.site/',
       expectedCodes: [200], 
+headers: {
+  // 👇 グローバル環境変数から値を直接読み込ませます（クォーテーションを外す）
+  'X-Uptimeflare-Auth': typeof MY_SECRET_HEADER !== 'undefined' ? MY_SECRET_HEADER : '',
+},
+
        },
          {
       id: 'game-ryo',
@@ -57,6 +77,11 @@ const workerConfig: WorkerConfig = {
       method: 'GET',
       target: 'https://game-ryo.is-a.dev/',
       expectedCodes: [200], 
+headers: {
+  // 👇 グローバル環境変数から値を直接読み込ませます（クォーテーションを外す）
+  'X-Uptimeflare-Auth': typeof MY_SECRET_HEADER !== 'undefined' ? MY_SECRET_HEADER : '',
+},
+
        },
         {
       id: 'form-api',
@@ -64,6 +89,11 @@ const workerConfig: WorkerConfig = {
       method: 'GET',
       target: 'https://form-api.ryopc.f5.si/',
       expectedCodes: [404], 
+headers: {
+  // 👇 グローバル環境変数から値を直接読み込ませます（クォーテーションを外す）
+  'X-Uptimeflare-Auth': typeof MY_SECRET_HEADER !== 'undefined' ? MY_SECRET_HEADER : '',
+},
+
     },
   ],
 
